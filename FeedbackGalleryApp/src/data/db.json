@@ -1,0 +1,158 @@
+{
+    "gallery": [
+        {
+            "id": "0",
+            "photoName": "animal",
+            "category": "Animal",
+            "image": "Gallery/dogs.jpg"
+        },
+        {
+            "id": "1",
+            "photoName": "House",
+            "category": "House",
+            "image": "Gallery/redjungle.jpg"
+        },
+        {
+            "id": "2",
+            "photoName": "village",
+            "category": "Village",
+            "image": "Gallery/redjungle.jpg"
+        },
+        {
+            "id": "3",
+            "photoName": "nature",
+            "category": "Nature",
+            "image": "Gallery/dogs.jpg"
+        }
+    ],
+    "animal": [
+        {
+            "id": "0",
+            "galleryId": "0",
+            "image": "animal/animal1.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "1",
+            "galleryId": "0",
+            "image": "animal/Bison.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "2",
+            "galleryId": "0",
+            "image": "animal/dogs.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "3",
+            "galleryId": "0",
+            "image": "animal/dolphin.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "4",
+            "galleryId": "0",
+            "image": "animal/Elephant.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "5",
+            "galleryId": "0",
+            "image": "animal/penguin.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "6",
+            "galleryId": "0",
+            "image": "animal/tiger.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "7",
+            "galleryId": "0",
+            "image": "animal/tortoise.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "8",
+            "galleryId": "0",
+            "image": "animal/dolphin.jpg",
+            "category": "Animal"
+        }
+    ],
+    "nature": [
+        {
+            "id": "0",
+            "galleryId": "3",
+            "image": "nature/hill.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "1",
+            "galleryId": "3",
+            "image": "nature/himalayan.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "2",
+            "galleryId": "3",
+            "image": "nature/norway-sky.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "3",
+            "galleryId": "3",
+            "image": "nature/redjungle.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "4",
+            "galleryId": "3",
+            "image": "nature/riverMountain.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "5",
+            "galleryId": "3",
+            "image": "nature/sky.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "6",
+            "galleryId": "3",
+            "image": "nature/road.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "7",
+            "galleryId": "3",
+            "image": "nature/greenGrass.jpg",
+            "category": "Animal"
+        },
+        {
+            "id": "8",
+            "galleryId": "3",
+            "image": "nature/tree.jpg",
+            "category": "Animal"
+        }
+    ],
+    "feedback": [
+        {
+            "id": "0",
+            "animalId": 0,
+            "rating": 4,
+            "description": "This is a nice picture of animal",
+            "author": "Ashraful",
+            "date": "2018-10-16T17:57:28.556094Z"
+        },
+        {
+            "id": "1",
+            "animalId": 2,
+            "rating": 4,
+            "description": "This is a nice picture of animal",
+            "author": "Rahim",
+            "date": "2019-10-16T17:57:28.556094Z"
+        }
+    ]
+}
