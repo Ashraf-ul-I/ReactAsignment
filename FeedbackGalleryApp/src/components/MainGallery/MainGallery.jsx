@@ -15,6 +15,7 @@ const MainGallery = () => {
                     <div key={item.id} className='h-[300px] w-[500px]sm:px-28 rounded shadow-xl bg-red-200'>
                         <img className='h-full w-full rounded shadow-xl bg-red-200'
                             src={item.image} alt="" />
+                        <span className='sm:justify-center sm:items-center flex px-4 font-semibold'>{item.category}</span>
                     </div>
                 ))
             }
