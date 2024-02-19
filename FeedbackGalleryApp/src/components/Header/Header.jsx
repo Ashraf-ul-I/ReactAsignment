@@ -1,16 +1,18 @@
 import React from 'react';
-import { Navbar, Nav, NavItem, NavbarBrand } from "reactstrap";
 import image from '/images/9802blgjc5avu8ci0g0rd3ttmh-58723b5c03c5e787ee9fd935bef8bf8d.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <div className='bg-emerald-500 sticky sm:h-12 w-full'>
             <nav className='md:flex md:justify-between md:items-center'>
                 <div className='md:flex items-center'>
-                    <img src={image} alt="" className='h-12 inline' />
-                    <span className='text-2xl font-Poppins cursor-pointer text-white '>
-                        Photo Gallery
-                    </span>
+                    <Link to="/">
+                        <img src={image} alt="" className='h-12 inline' />
+                        <span className='text-2xl font-Poppins cursor-pointer text-white '>
+                            Photo Gallery
+                        </span>
+                    </Link>
                 </div>
 
                 <div className='md:flex md:items-center'>

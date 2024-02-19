@@ -1,24 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Header from './components/Header/Header'
-import Animal from './components/category/animal/Animal'
-
-import Animals from './components/category/animal/Animals'
-import MainGallery from './components/MainGallery/MainGallery'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './components/Header/Header';
+import MainGallery from './components/MainGallery/MainGallery';
+import Animal from './components/category/animal/Animal';
+import Nature from './components/category/nature/Nature';
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <div>
-        <Header></Header>
-        {/* <Animal /> */}
-        <MainGallery />
-      </div>
+        <Header />
+        <Routes>
+          <Route path="/" element={<MainGallery />} />
+          <Route path="/animal/:galleryId" element={<Animal />} />
+          <Route path="/nature/:galleryId" element={<Nature />} />
 
-    </>
-  )
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

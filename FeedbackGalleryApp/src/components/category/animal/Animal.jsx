@@ -1,23 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import db from '../../../data/db.json';
-import LazyLoad from 'react-lazyload'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
-import image from '/images/9802blgjc5avu8ci0g0rd3ttmh-58723b5c03c5e787ee9fd935bef8bf8d.png';
+import { useParams } from 'react-router-dom';
+import Spinner from '../../Spinner/Spinner';
+
 const Animal = () => {
+    const { galleryId } = useParams();
+    const [filteredAnimals, setFilteredAnimals] = useState([]);
+    const [showSpinner, setShowSpinner] = useState(true);
+
+    useEffect(() => {
+
+        const timeoutId = setTimeout(() => {
+            const fetchAnimals = async () => {
+                const animals = db.animal.filter((item) => item.galleryId === galleryId);
+                setFilteredAnimals(animals);
+                setShowSpinner(false);
+            };
+            fetchAnimals();
+        }, 2000);
+        console.log(timeoutId);
+        return () => clearTimeout(timeoutId);
+
+    }, [galleryId]);
+
     return (
         <div className='grid gap-4 m-4 sm:grid-cols-3'>
-            {db.animal.map((item) => (
-                <LazyLoadImage className='min-h-full rounded shadow-xl'
-                    src={item.image}
-                    key={item.id}
-
-                    height='min-h-full'
-                    width='min-w-full'
-                    alt={`Animal ${item.id}`}
-                    placeholderSrc={image} />
-            ))}
+            {showSpinner ? (
+                <Spinner />
+            ) : (
+                filteredAnimals.map((item) => (
+                    <div key={item.id} className='min-h-full rounded shadow-xl'>
+                        <img
+                            className='min-h-full rounded shadow-xl'
+                            src={`/${item.image}`}
+                            alt={`Animal ${item.id}`}
+                        />
+                    </div>
+                ))
+            )}
         </div>
     );
 };
-//stil its not efficient if the user used 3g
+
 export default Animal;

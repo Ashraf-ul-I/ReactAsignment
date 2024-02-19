@@ -3,25 +3,25 @@
         {
             "id": "0",
             "photoName": "animal",
-            "category": "Animal",
+            "category": "animal",
             "image": "Gallery/dogs.jpg"
         },
         {
             "id": "1",
             "photoName": "House",
-            "category": "House",
+            "category": "house",
             "image": "Gallery/redjungle.jpg"
         },
         {
             "id": "2",
             "photoName": "village",
-            "category": "Village",
+            "category": "village",
             "image": "Gallery/redjungle.jpg"
         },
         {
             "id": "3",
             "photoName": "nature",
-            "category": "Nature",
+            "category": "nature",
             "image": "Gallery/dogs.jpg"
         }
     ],
