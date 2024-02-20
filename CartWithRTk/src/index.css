@@ -9,9 +9,23 @@ body {
   background: whitesmoke;
 }
 
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 600px;
+}
+
 img {
   height: 80px;
 }
+
+.errorImage {
+  height: 500px;
+  width: 70%;
+
+}
+
 
 .card {
   background: white;

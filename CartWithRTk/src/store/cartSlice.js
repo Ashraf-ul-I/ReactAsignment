@@ -11,7 +11,8 @@ const cartSlice = createSlice({
             //but in core redux we didnot change the sate directly we had to work like return[...state,action.payload]
         },
         remove(state, action) {
-            state = state.filter((item) => item.id != action.payload);
+            return (state.filter((item) => item.id !== action.payload));
+            
         }
     }
 

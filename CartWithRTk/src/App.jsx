@@ -15,15 +15,15 @@ function App() {
 
   return (
     <div className='App'>
-
-      <BrowserRouter>
-        <Navbar cartItems={cartItems} />
-        <Routes>
-          <Route path='/' element={<Home addToCart={addToCart} />} /> {/* Pass addToCart function as prop */}
-          <Route path='/cart' element={<Carts />} />
-        </Routes>
-      </BrowserRouter>
-
+      <Provider store={store}>
+        <BrowserRouter>
+          <Navbar cartItems={cartItems} />
+          <Routes>
+            <Route path='/' element={<Home addToCart={addToCart} />} /> {/* Pass addToCart function as prop */}
+            <Route path='/cart' element={<Carts />} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     </div>
   )
 }
