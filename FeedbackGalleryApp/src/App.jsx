@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import MainGallery from './components/MainGallery/MainGallery';
 import Animal from './components/category/animal/Animal';
 import Nature from './components/category/nature/Nature';
+import Animals from './components/category/animal/Animals';
 
 function App() {
   return (
@@ -12,8 +13,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<MainGallery />} />
-          <Route path="/animal/:galleryId" element={<Animal />} />
-          <Route path="/nature/:galleryId" element={<Nature />} />
+          <Route path="/animal/:galleryId" element={<Animals />} />
+          {/* <Route path="/nature/:galleryId" element={<Nature />} /> */}
 
         </Routes>
       </div>
