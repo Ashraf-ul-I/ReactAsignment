@@ -1,9 +1,11 @@
+import { baseUrl } from "./baseUrl";
+import axios from "axios";
 export const fetchGalleryData = createAsyncThunk(
-    'gallery/fetchData',
-    async () => {
-        const response = await axios.get(baseUrl + 'gallery');
-        return response.data;
+    'gallery/fetchData', () => {
+        return axios.get(baseUrl + 'gallery')
+            .then(response => response.data.map((item) => item.gallery))
     }
+
 );
 
 const gallerySlice = createSlice({
@@ -13,21 +15,16 @@ const gallerySlice = createSlice({
         status: 'idle',
         error: null
     },
-    reducers: {},
-    extraReducers: (builder) => {
-        builder
-            .addCase(fetchGalleryData.pending, (state) => {
-                state.status = 'loading';
-            })
-            .addCase(fetchGalleryData.fulfilled, (state, action) => {
-                state.status = 'succeeded';
-                state.data = action.payload.gallery;
-            })
-            .addCase(fetchGalleryData.rejected, (state, action) => {
-                state.status = 'failed';
-                state.error = action.error.message;
-            });
-    }
+    reducers: {
+
+        setData: (state, action) => {
+            const gData = {
+                data: action.payload
+            }
+        }
+
+    },
+
 });
 
 export default gallerySlice.reducer;
