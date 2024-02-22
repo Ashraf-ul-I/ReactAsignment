@@ -7,19 +7,15 @@ import Navbar from './components/Navbar'
 import { Provider } from 'react-redux'
 import store from './store/store'
 function App() {
-  const [cartItems, setCartItems] = useState(0);
 
-  const addToCart = () => {
-    setCartItems(prevCount => prevCount + 1);
-  }
 
   return (
     <div className='App'>
       <Provider store={store}>
         <BrowserRouter>
-          <Navbar cartItems={cartItems} />
+          <Navbar />
           <Routes>
-            <Route path='/' element={<Home addToCart={addToCart} />} /> {/* Pass addToCart function as prop */}
+            <Route path='/' element={<Home />} />
             <Route path='/cart' element={<Carts />} />
           </Routes>
         </BrowserRouter>

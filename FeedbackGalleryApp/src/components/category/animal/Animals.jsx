@@ -2,25 +2,26 @@
 
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAnimals } from '../../../app/actions/animalActions'; // Import Redux action
+import { fetchData } from '../../../redux/galleryData';
+import { STATUSES } from '../../../redux/galleryData';
 
 import Spinner from '../../Spinner/Spinner';
 
 const Animals = () => {
     const dispatch = useDispatch();
     const { galleryId } = useParams();
-    const { data: filteredAnimals, loading: showSpinner } = useSelector((state) => state.animal);
+    const { data: filteredAnimals, status: showSpinner } = useSelector((state) => state.gData);
 
     useEffect(() => {
-        dispatch(fetchAnimals(galleryId));
-    }, [dispatch, galleryId]);
+        dispatch(fetchData());
+    }, []);
 
     return (
         <div className='grid gap-4 m-4 sm:grid-cols-3'>
-            {showSpinner ? (
+            {showSpinner === STATUSES.LOADING ? (
                 <Spinner />
             ) : (
-                filteredAnimals.map((item) => (
+                filteredAnimals.animal.filter((item) => item.galleryId === galleryId).map((item) => (
                     <div key={item.id} className='min-h-full rounded shadow-xl'>
                         <img
                             className='min-h-full rounded shadow-xl'
